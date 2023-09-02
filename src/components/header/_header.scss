@@ -1,0 +1,277 @@
+.header {
+  font-family: "Poppins";
+  &__box-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+    background-color: #f0efed;
+  }
+  &__links {
+    position: relative;
+    display: flex;
+    min-width: 590px;
+    color: #311e19;
+    padding-top: 17px;
+    padding-bottom: 17px;
+
+    // &__drop {
+    //   position: absolute;
+    //   display: none;
+    //   width: 50px;
+    //   z-index: 1;
+    // }
+  }
+
+  &__link {
+    margin-right: 15px;
+  }
+
+  &__box-2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 10px;
+
+    margin-bottom: 1px;
+    background: #fff;
+
+    &__box {
+      display: flex;
+    }
+  }
+
+  &__box-3 {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+  }
+}
+
+.top-bar {
+  display: flex;
+  width: 310px;
+  height: 40px;
+  justify-content: space-between;
+  &__box {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    min-width: 142px;
+
+    &__text {
+      font-size: 14px;
+    }
+  }
+
+  &__img-phone {
+    margin-right: 13px;
+  }
+  &__img-user {
+    margin-right: 5px;
+  }
+}
+
+.logo {
+  margin-right: 40px;
+  &__text {
+    font-family: "Merriweather", serif;
+    color: #311e19;
+  }
+}
+
+.cart {
+  position: relative;
+  display: flex;
+  height: 39px;
+  min-width: 185px;
+  padding: 5px 20px;
+  padding-right: 5px;
+  border-radius: 3px;
+  background-color: #88543e;
+
+  &__number {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 15px;
+    height: 15px;
+
+    background: #eeb256;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 3px 2px 6px;
+
+    &__text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      line-height: 15px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    margin-right: 30px;
+  }
+
+  &__text {
+    color: #fff;
+  }
+}
+
+.input-box {
+  position: relative;
+  margin-right: 30px;
+  &__input {
+    width: 370px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    padding-left: 23px;
+
+    color: #311e19;
+    opacity: 0.5;
+  }
+
+  &__img-box {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 45px;
+    padding-left: 27px;
+    padding-right: 27px;
+    background: #eeb256;
+    border-radius: 3px;
+  }
+}
+
+.delivery {
+  display: flex;
+  min-width: 210px;
+  margin-right: 30px;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 3px;
+    margin-right: 10px;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    &__second {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 43px;
+      width: 43px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    /* Dark brown */
+
+    color: #311e19;
+  }
+
+  &__text-grey {
+    color: #311e1980;
+  }
+}
+
+.category {
+  margin: auto;
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.003em;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    border-right: 1px solid #e2e0df;
+
+    &__underlining {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: fff;
+    }
+
+    &__drop {
+      display: flex;
+      flex-direction: column;
+      min-width: 140px;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 30px;
+
+      color: #311e19;
+
+      padding-left: 20px;
+      padding-right: 25px;
+      padding-top: 8px;
+      padding-bottom: 10px;
+
+      background: #ffffff;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+
+    &__backdrop {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      padding-top: 5px;
+    }
+  }
+
+  &__item:hover &__item__underlining {
+    background-color: #90604c;
+  }
+
+  &__item:hover &__item__backdrop {
+    display: block;
+  }
+  &__item__drop:hover {
+    display: flex;
+  }
+}
