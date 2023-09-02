@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+
 import logo from 'images/Shop.png';
 import car from 'images/car.svg';
 import icon from 'images/icon.svg';
@@ -11,7 +12,7 @@ import { category } from 'redux/products/selectors';
 // import { AppDispatch, RootState } from 'redux/store';
 import { useAppDispatch, useAppSelector } from 'hook';
 import { IProductData } from 'redux/products/slice';
-import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import DropMenu from 'elements/dropMenu';
 
 export const Header = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -37,24 +38,29 @@ const categoryNames: IProductData[] = useAppSelector(state =>
   return (
     <header className="header">
       <div className="header__box-1">
-        <div className="header__links">
-          <a className="header__link link">Оплата і доставки</a>
-          <a className="header__link link">Про магазин</a>
-          <a className="header__link link">Контакти</a>
-          <div>
-            <a className="header__link link">Сервіс і допомога</a>
-            <div className="category__item__backdrop">
-              <ul className="category__item__drop">
-                <li>Назва пункта</li>
-                <li>Назва пункта</li>
-                <li>Назва пункта</li>
-                <li>Назва пункта</li>
-                <li>Назва пункта</li>
-              </ul>
-            </div>
-          </div>
-          <a className="header__link link">Бренди</a>
-          <a className="header__link link">Відгуки</a>
+        <div >
+        <ul className="header__links">
+          <li className="header__link link">
+              <p>Оплата і доставка</p>
+              <DropMenu />
+          </li>
+            <li className="header__link link"><p>Про магазин</p>
+              <DropMenu />
+            </li>
+            <li className="header__link link"><p>Контакти</p>
+              <DropMenu />
+            </li>
+            <li className="header__link link"><p>Сервіс і допомога</p>
+              <DropMenu />
+            </li>
+            <li className="header__link link"><p>Бренди</p>
+              <DropMenu />
+            </li>
+            <li className="header__link link"><p>Відгуки</p>
+              <DropMenu />
+            </li>
+        </ul>
+
         </div>
 
         <div className="top-bar">
@@ -134,22 +140,12 @@ const categoryNames: IProductData[] = useAppSelector(state =>
       <div className="header__box-3 category">
         <ul className="category__list">
         {(categoryName || []).map((el: IProductData, index: number) => (
-  <li className="category__item" key={index} onClick={handleClick}>
-    {el.name}
-    <div className="category__item__backdrop">
-      <ul className="category__item__drop">
-        <li>Назва пункта</li>
-        <li>Назва пункта</li>
-        <li>Назва пункта</li>
-        <li>Назва пункта</li>
-        <li>Назва пункта</li>
-      </ul>
-    </div>
-    <div className="category__item__underlining"></div>
-  </li>
-))}
-
-
+          <li className="category__item" key={index} onClick={handleClick}>
+            {el.name}
+            <DropMenu />
+            <div className="category__item__underlining"></div>
+          </li>
+        ))}
         </ul>
       </div>
     </header>

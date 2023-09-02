@@ -303,7 +303,7 @@
 .category__item:hover .category__item__underlining {
   background-color: #90604c;
 }
-.category__item:hover .category__item__backdrop {
+.header__link:hover .category__item__backdrop {
   display: block;
 }
 .category__item__drop:hover {
