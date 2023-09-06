@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { products } from './operations';
+import { categories } from './operations';
 
 export interface IProductData {
   id: number;
@@ -31,7 +31,7 @@ const categorySlice = createSlice({
     //   state.dailyRate = action.payload.dailyRate;
     //   state.notAllowedProducts = notAllowedProducts;
     // });
-    builder.addCase(products.fulfilled, (state, action) => {
+    builder.addCase(categories.fulfilled, (state, action) => {
       // @ts-ignore
       state.categories = action.payload
       // state.categories = action.payload as Draft<IProductData>[];

@@ -5,7 +5,7 @@ import car from 'images/car.svg';
 import icon from 'images/icon.svg';
 import trash from 'images/trash.svg';
 import search from 'images/search.svg';
-import { products } from 'redux/products/operations';
+import { categories, productsByName } from 'redux/products/operations';
 // import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { category } from 'redux/products/selectors';
@@ -18,13 +18,8 @@ export const Header = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(products());
+    dispatch(categories());
   }, []);
-  // console.log(typeof category);
-  // category.filter
-  
-    
-
 
 const categoryNames: IProductData[] = useAppSelector(state =>
   state.category.categories.filter((el: IProductData) => el.name.length <= 15)
@@ -34,6 +29,25 @@ const categoryNames: IProductData[] = useAppSelector(state =>
   const handleClick = (): void => {
     console.log(123);
   };
+
+const handleSubmit = (event: React.FormEvent) => {
+  event.preventDefault();
+
+  if (event.currentTarget instanceof HTMLFormElement) {
+    const formElement = event.currentTarget;
+    const nameInput = formElement.elements.namedItem('name') as HTMLInputElement;
+
+    if (nameInput) {
+      const nameValue = nameInput.value;
+      const trimmedNameValue = nameValue.trim();
+
+      if (trimmedNameValue.length !== 0) {
+        console.log(trimmedNameValue.length);
+        dispatch(productsByName(trimmedNameValue));
+      }
+    }
+  }
+}
 
   return (
     <header className="header">
@@ -92,16 +106,17 @@ const categoryNames: IProductData[] = useAppSelector(state =>
           <span className="logo__text">Наш магазин</span>
         </div>
         <div className="header__box-2__box">
-          <div className="input-box">
+          <form className="input-box" onSubmit={handleSubmit}>
             <input
               className="input-box__input"
+              name='name'
               type="text"
               placeholder="Введіть назву товару"
             />
-            <div className="input-box__img-box">
+            <button className="input-box__img-box" type='submit'>
               <img src={search} alt="" />
-            </div>
-          </div>
+            </button>
+          </form>
           <div className="delivery">
             <div className="delivery__box">
               <div className="delivery__box__second">
