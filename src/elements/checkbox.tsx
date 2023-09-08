@@ -2,11 +2,11 @@ import React from 'react';
 
 const Checkbox = ({ values }: { values: any[] }): JSX.Element => {
   return (
-    <div>
+    <div className='checkbox'>
       {values.map((el, index) => (
-        <label key={index}>
-          <input type="checkbox" name="hobby" value={el} />
-          {el}
+        <label key={index} className='checkbox__label'>
+          <input type="checkbox" value={el} className='checkbox__input' />
+          <span>{el}</span>
         </label>
       ))}
     </div>

@@ -1,0 +1,12 @@
+.sidebar {
+  width: 300px;
+  padding: 20px 0 10px 0;
+  background-color: #ffffff;
+
+  & > form {
+    padding: 20px 0 30px 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #311e19;
+  }
+}

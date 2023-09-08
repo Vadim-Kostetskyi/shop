@@ -27,13 +27,13 @@
   }
 
   &__link {
-  position: relative;
+    position: relative;
 
     margin-right: 15px;
 
-    &:hover  .drop-menu {
-    display: block;
-  }
+    &:hover .drop-menu {
+      display: block;
+    }
   }
 
   &__box-2 {
@@ -214,6 +214,7 @@
 
 .category {
   margin: auto;
+  margin-bottom: 45px;
   &__item {
     position: relative;
     display: flex;
