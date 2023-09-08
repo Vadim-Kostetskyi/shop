@@ -13,6 +13,7 @@ import { category } from 'redux/products/selectors';
 import { useAppDispatch, useAppSelector } from 'hook';
 import { IProductData } from 'redux/products/slice';
 import DropMenu from 'elements/dropMenu';
+import { Sidebar } from 'components/sidebar/Sidebar';
 
 export const Header = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -163,6 +164,7 @@ const handleSubmit = (event: React.FormEvent) => {
         ))}
         </ul>
       </div>
+      <Sidebar/>
     </header>
   );
 };
