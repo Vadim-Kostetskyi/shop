@@ -32,8 +32,8 @@ export const Sidebar = (): JSX.Element => {
                 </form>
             
             <div className="sidebar__function">
-                <button>Показати (N) товарів</button>
-                <button>Очистити фільтр</button>
+                <button className="sidebar__function-show">Показати (N) товарів</button>
+                <button className="sidebar__function-clear">Очистити фільтр</button>
             </div>
         </div>
     )
